@@ -1,0 +1,50 @@
+drop database if exist queque
+create database queque
+use queque
+
+create table provincia (provincia_id int Primary key auto_increment , nombreprov varchar (50) );
+
+create table ciudad (ciudad_id int Primary key auto_increment , provincia_id int , nombreciudad varchar (50) , 
+Foreing Key (provincincia_id) reference provincia(provincia_id) );
+
+create table producto (producto_id int Primary key auto_increment , nombreproducto varchar (60) , cantidad int );
+
+create table pedido (pedido_id int Primary key auto_increment , producto_id int , precio int ,Foreing Key (producto_id) Reference producto(producto_id) );
+
+create table cliente (id int Primary key auto_increment , pedido_id int , ciudad_id int , nombre varchar(40) , foreing key (ciudad_id) reference ciudad(ciudad_id) ,
+foreing key (pedido_id) reference pedido(pedido_id));
+
+
+INSERT INTO provincia (nombreprov) VALUES 
+('Buenos Aires'), 
+('Córdoba'), 
+('Santa Fe'), 
+('Mendoza'), 
+('Tucumán');
+
+
+INSERT INTO ciudad (provincia_id, nombreciudad) VALUES 
+(1, 'La Plata'), 
+(2, 'Villa Carlos Paz'), 
+(3, 'Rosario'), 
+(4, 'San Rafael'), 
+(5, 'San Miguel');
+
+
+INSERT INTO producto (nombreproducto, cantidad) VALUES 
+('Harina 000', 100), 
+('Azúcar Mascabado', 50), 
+('Esencia de Vainilla', 20), 
+('Levadura Fresca', 200), 
+('Chocolate Amargo', 30);
+
+
+INSERT INTO pedido (precio) VALUES 
+(5100), (2000), (3500), (3400), (5000);
+
+INSERT INTO cliente (pedido_id, ciudad_id, nombre) VALUES 
+(1, 1, 'Juan Pérez'), 
+(2, 2, 'María García'), 
+(3, 3, 'Carlos López'), 
+(4, 4, 'Ana Martínez'), 
+(5, 5, 'Lucía Fernández');

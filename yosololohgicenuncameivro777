@@ -1,0 +1,7 @@
+Select * FROM Clientes
+Select p.nombre FROM provincias p
+zcx
+Select * FROM productos p ORDER BY p.precio DESC limit 3
+SELECT C.NOMBRE FROM CIUDAD C ORDER BY c.poblacion desc
+select p.nombre from provincia p where p.poblacion > 100000 AND p.poblacion < 1000000
+Select cl.nombre , c.ciudad from cliente cl JOIN cl.localidad = c.id

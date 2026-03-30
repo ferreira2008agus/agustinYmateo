@@ -2,6 +2,14 @@ Select * FROM Clientes
 Select p.nombre FROM provincias p
 zcx
 Select * FROM productos p ORDER BY p.precio DESC limit 3
-SELECT C.NOMBRE FROM CIUDAD C ORDER BY c.poblacion desc
+Select C.NOMBRE FROM CIUDAD C ORDER BY c.poblacion desc
 select p.nombre from provincia p where p.poblacion > 100000 AND p.poblacion < 1000000
-Select cl.nombre , c.ciudad from cliente cl JOIN cl.localidad = c.id
+Select cl.nombre , c.ciudad from cliente cl JOIN ciudad c ON cl.localidad = c.id
+Select c.nombre , p.nombre from Ciudad c JOIN provincia p on C.provincia = p.id
+Select Sum(PR.stock) from productos PR
+Select AVG(PR.precio) as Precio_promedio from productos PR
+Select Count(c.id) as cantidad_clientes from clientes c
+Select C.NOMBRE FROM CIUDAD C ORDER BY c.poblacion asc LIMIT 3
+Select Pr.nombre FROM productos pr WHERE PR.stock < 10;
+subconsuta
+Select * from compras order by fecha DESC limit 1
